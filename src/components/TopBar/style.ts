@@ -5,3 +5,9 @@ export const TitleLogo = styled.h1`
   font-size: 36px;
   font-weight: bold;
 `
+export const TextMenu = styled.p`
+  color: #fff;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-family: Poppins;
+`
