@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Home: React.FC = () => <div />
+import { TopBar } from '../../components'
+import { RowDiv } from './style'
+
+const Home: React.FC = () => (
+  <RowDiv>
+    <TopBar />
+  </RowDiv>
+)
 
 export default Home

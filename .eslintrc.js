@@ -33,7 +33,7 @@ module.exports = {
       'prettier/prettier': 2,
       'space-before-function-paren': 0,
       'react/prop-types': 'off',
-      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
       '@typescript-eslint/explicit-function-return-type': 'off'
     }
 };
