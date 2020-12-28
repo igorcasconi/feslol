@@ -1,9 +1,10 @@
 import React from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { Button } from '@material-ui/core'
+import { Button, OutlinedInputProps, TextField } from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search'
 
 import { Row } from '../Row'
-import { TextMenu, TitleLogo } from './style'
+import { TextMenu, TitleLogo, useStylesReddit } from './style'
 
 import { menuItems } from '../../helpers/topbar'
 import { MenuProps } from './types'
@@ -11,6 +12,7 @@ import { MenuProps } from './types'
 const TopBar: React.FC = () => {
   const history = useHistory()
   const route = useLocation()
+  const classes = useStylesReddit()
 
   return (
     <Row
@@ -42,6 +44,16 @@ const TopBar: React.FC = () => {
             </Button>
           </Row>
         ))}
+      </Row>
+      <Row justifyContent='center' alignItems='center'>
+        <Button>
+          <SearchIcon style={{ color: '#fff', fontSize: 30, marginRight: -10 }} />
+        </Button>
+        <TextField
+          InputProps={{ classes, disableUnderline: true } as Partial<OutlinedInputProps>}
+          size='small'
+          placeholder='Pesquisar'
+        />
       </Row>
     </Row>
   )
