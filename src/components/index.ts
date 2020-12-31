@@ -1,3 +1,5 @@
 export * from './TopBar'
 export * from './Row'
 export * from './Column'
+export * from './Image'
+export * from './Text'
