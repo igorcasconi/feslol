@@ -13,7 +13,7 @@ export const TextMenu = styled.p`
   font-family: Poppins;
 `
 
-export const useStylesReddit = makeStyles((theme: Theme) =>
+export const useStylesInput = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       border: '1px solid #e2e2e1',

@@ -5,7 +5,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline'
 
 import { Row, Column } from '../../components'
-import { TextMenu, TitleLogo, useStylesReddit } from './style'
+import { TextMenu, TitleLogo, useStylesInput } from './style'
 
 import { menuItems } from '../../helpers/topbar'
 import { MenuProps } from './types'
@@ -13,7 +13,7 @@ import { MenuProps } from './types'
 const TopBar: React.FC = () => {
   const history = useHistory()
   const route = useLocation()
-  const classes = useStylesReddit()
+  const classes = useStylesInput()
   const queryWidthForMenu = useMediaQuery('(max-width:1024px)')
   const queryWidthForSearch = useMediaQuery('(max-width:600px)')
   const [openMenu, setOpenMenu] = useState<boolean>(false)
@@ -26,7 +26,7 @@ const TopBar: React.FC = () => {
     <Column width='100%' justifyContent='center' alignItems='center'>
       <Row
         width='100%'
-        height='5rem'
+        height='60px'
         px='2.188rem'
         justifyContent='space-between'
         alignItems='center'
@@ -34,7 +34,6 @@ const TopBar: React.FC = () => {
         position='absolute'
         top={0}
         left={0}
-        mb='5rem'
       >
         <TitleLogo>OESLOL</TitleLogo>
         {queryWidthForMenu === false ? (
