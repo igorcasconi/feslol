@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png'
+
 export const listNews = [
   {
     id: 1,
@@ -54,5 +56,28 @@ export const listChampionship = [
     date: '15/07/2020',
     hour: '20h',
     link: 'https://github.com/igorcasconi'
+  }
+]
+
+export const listTeams = [
+  {
+    id: 1,
+    logoImage: logo
+  },
+  {
+    id: 2,
+    logoImage: logo
+  },
+  {
+    id: 3,
+    logoImage: logo
+  },
+  {
+    id: 4,
+    logoImage: logo
+  },
+  {
+    id: 5,
+    logoImage: logo
   }
 ]
