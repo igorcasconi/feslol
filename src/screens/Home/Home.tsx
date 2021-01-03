@@ -3,7 +3,7 @@ import Carousel from 'react-elastic-carousel'
 
 import { Column, Row, Image, Text } from '../../components'
 
-import { listChampionship, listNews } from '../../utils/mockedHome'
+import { listChampionship, listNews, listTeams } from '../../utils/mockedHome'
 import { ListChampionship } from '../../shared/listInterfaces'
 
 import featuredImage from '../../assets/Featured.jpg'
@@ -85,7 +85,8 @@ const Home: React.FC = () => {
           </Carousel>
         </Row>
       </Row>
-      <Column width='100%' paddingX={['10px', '50px', '150px', '250px']}>
+
+      <Column width='100%' paddingX={['10px', '50px', '150px', '250px']} mb='32px'>
         <Column width='100%' alignItems='center' justifyContent='center'>
           <Row width='100%' mb='20px' justifyContent='center'>
             <Text fontSize={24} color='#262626' lineHeight={28.13}>
@@ -94,7 +95,7 @@ const Home: React.FC = () => {
           </Row>
 
           <Row width='100%' justifyContent='center' alignItems='center'>
-            <Row width='100%' mb='16px' justifyContent='center'>
+            <Row width='100%' justifyContent='center'>
               <Row overflowX='auto' paddingTop='10px'>
                 {listChampionship.map((items: ListChampionship) => (
                   <Column
@@ -139,6 +140,41 @@ const Home: React.FC = () => {
             </Row>
           </Row>
         </Column>
+      </Column>
+
+      <Column
+        width='100%'
+        bgcolor='#262626'
+        paddingX={['10px', '50px', '250px', '350px', '450px']}
+        paddingY='25px'
+        alignItems='center'
+        mb='32px'
+      >
+        <Row width='100%' justifyContent='flex-start' mb='16px'>
+          <Text fontSize={24} color='#fff'>
+            NOVOS TIMES
+          </Text>
+        </Row>
+
+        <Row width='100%' justifyContent='center' alignItems='center'>
+          <Row width='100%' overflowX='auto'>
+            <Carousel
+              itemsToShow={5}
+              enableAutoPlay
+              preventDefaultTouchmoveEvent
+              enableSwipe
+              showArrows={false}
+              renderPagination={() => <></>}
+              autoPlaySpeed={2500}
+            >
+              {listTeams.map((items: { id: number; logoImage: string }) => (
+                <Row width='100%' justifyContent='center' alignItems='center' key={items.id} mr='16px'>
+                  <Image sourceimage={items.logoImage} width='120px' height='120px' />
+                </Row>
+              ))}
+            </Carousel>
+          </Row>
+        </Row>
       </Column>
     </Column>
   )
