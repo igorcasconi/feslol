@@ -27,7 +27,7 @@ const TopBar: React.FC = () => {
       <Row
         width='100%'
         height='60px'
-        px='2.188rem'
+        px='35px'
         justifyContent='space-between'
         alignItems='center'
         bgcolor='#262626'

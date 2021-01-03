@@ -7,7 +7,7 @@ import { Home } from '../screens/Home'
 import { linksMenu } from '../helpers/topbar'
 
 const Routes: React.FC = () => (
-  <Column width='100%' minHeight='100vh' position='relative'>
+  <Column width='100%' height='100%' position='relative'>
     <TopBar />
     <Column width='100%' height='100%' mt='60px'>
       <Route exact path={linksMenu.urlHome}>
