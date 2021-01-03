@@ -3,4 +3,5 @@ export interface TextProps {
   color: string
   fontWeight?: string
   textAlign?: string
+  lineHeight?: number
 }

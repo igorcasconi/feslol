@@ -8,14 +8,12 @@ const Image: React.FC<ImageProps & BoxProps> = ({ sourceimage, ...props }) => (
   <ImageView sourceimage={sourceimage} {...props} />
 )
 
-const ImageView = styled(Box)<ImageProps>(({ sourceimage }) => {
+const ImageView = styled(Box)<ImageProps>(({ sourceimage, opacity }) => {
   return css`
     background-image: url(${sourceimage});
     background-size: cover;
     background-repeat: no-repeat;
-    @media (m-width: 900px) {
-      background-size: contain;
-    }
+    ${opacity && `opacity: ${opacity}`};
   `
 })
 
