@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Carousel from 'react-elastic-carousel'
+import { Link, useMediaQuery } from '@material-ui/core'
 
 import { Column, Row, Image, Text } from '../../components'
 
@@ -9,9 +10,22 @@ import { ListChampionship } from '../../shared/listInterfaces'
 import featuredImage from '../../assets/Featured.jpg'
 import trophy from '../../assets/trophy.svg'
 import logo from '../../assets/logo.png'
-import { Link } from '@material-ui/core'
 
 const Home: React.FC = () => {
+  const queryWidth800 = useMediaQuery('(max-width:800px)')
+  const queryWidth600 = useMediaQuery('(max-width:600px)')
+  const queryWidth400 = useMediaQuery('(max-width:400px)')
+
+  const valueItemsCarouselTeams = useMemo(() => {
+    if (queryWidth400) return 2
+
+    if (queryWidth600) return 3
+
+    if (queryWidth800) return 4
+
+    return 5
+  }, [queryWidth800, queryWidth600, queryWidth400])
+
   return (
     <Column width='100%' height='100%'>
       <Row width='100%' height={{ xs: '700px', sm: '500px', md: '500px', lg: '500px' }} position='relative' mb='24px'>
@@ -145,7 +159,7 @@ const Home: React.FC = () => {
       <Column
         width='100%'
         bgcolor='#262626'
-        paddingX={['10px', '50px', '250px', '350px', '450px']}
+        paddingX={['10px', '50px', '150px', '350px', '450px']}
         paddingY='25px'
         alignItems='center'
         mb='32px'
@@ -159,7 +173,7 @@ const Home: React.FC = () => {
         <Row width='100%' justifyContent='center' alignItems='center'>
           <Row width='100%' overflowX='auto'>
             <Carousel
-              itemsToShow={5}
+              itemsToShow={valueItemsCarouselTeams}
               enableAutoPlay
               preventDefaultTouchmoveEvent
               enableSwipe

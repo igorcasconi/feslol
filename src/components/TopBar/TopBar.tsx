@@ -35,7 +35,7 @@ const TopBar: React.FC = () => {
         top={0}
         left={0}
       >
-        <TitleLogo>OESLOL</TitleLogo>
+        <TitleLogo>OSLOL</TitleLogo>
         {queryWidthForMenu === false ? (
           <Row>
             {menuItems.map((items: MenuProps) => (
