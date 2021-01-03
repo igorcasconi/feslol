@@ -13,18 +13,18 @@ import logo from '../../assets/logo.png'
 
 const Home: React.FC = () => {
   const queryWidth800 = useMediaQuery('(max-width:800px)')
-  const queryWidth600 = useMediaQuery('(max-width:600px)')
-  const queryWidth400 = useMediaQuery('(max-width:400px)')
+  const queryWidth700 = useMediaQuery('(max-width:700px)')
+  const queryWidth500 = useMediaQuery('(max-width:500px)')
 
   const valueItemsCarouselTeams = useMemo(() => {
-    if (queryWidth400) return 2
+    if (queryWidth500) return 2
 
-    if (queryWidth600) return 3
+    if (queryWidth700) return 3
 
     if (queryWidth800) return 4
 
     return 5
-  }, [queryWidth800, queryWidth600, queryWidth400])
+  }, [queryWidth800, queryWidth700, queryWidth500])
 
   return (
     <Column width='100%' height='100%'>
@@ -188,6 +188,28 @@ const Home: React.FC = () => {
               ))}
             </Carousel>
           </Row>
+        </Row>
+      </Column>
+
+      <Column
+        width='100%'
+        height='100%'
+        justifyContent='center'
+        alignItems='center'
+        paddingX={['10px', '50px', '150px', '250px', '450px']}
+      >
+        <Row width='100%' justifyContent='flex-start' mb='16px'>
+          <Text fontSize={24} color='#262626'>
+            PARCERIAS
+          </Text>
+        </Row>
+
+        <Row width='100%' flexWrap='wrap' justifyContent='center'>
+          {listTeams.map((items: { id: number; logoImage: string }) => (
+            <Row justifyContent='center' alignItems='center' key={items.id} mr='16px' mb='16px'>
+              <Image sourceimage={items.logoImage} width='120px' height='120px' />
+            </Row>
+          ))}
         </Row>
       </Column>
     </Column>
