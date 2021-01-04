@@ -24,17 +24,7 @@ const TopBar: React.FC = () => {
 
   return (
     <Column width='100%' justifyContent='center' alignItems='center'>
-      <Row
-        width='100%'
-        height='60px'
-        px='35px'
-        justifyContent='space-between'
-        alignItems='center'
-        bgcolor='#262626'
-        position='absolute'
-        top={0}
-        left={0}
-      >
+      <Row width='100%' height='60px' px='35px' justifyContent='space-between' alignItems='center' bgcolor='#262626'>
         <TitleLogo>OSLOL</TitleLogo>
         {queryWidthForMenu === false ? (
           <Row>
