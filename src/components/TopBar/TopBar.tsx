@@ -4,8 +4,8 @@ import { Button, OutlinedInputProps, TextField, useMediaQuery, Modal, Backdrop, 
 import SearchIcon from '@material-ui/icons/Search'
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline'
 
-import { Row, Column } from 'components'
-import { TextMenu, TitleLogo, useStylesInput } from './style'
+import { Row, Column, Input } from 'components'
+import { TextMenu, TitleLogo } from './style'
 
 import { menuItems } from 'helpers/topbar'
 import { MenuProps } from './types'
@@ -13,7 +13,6 @@ import { MenuProps } from './types'
 const TopBar: React.FC = () => {
   const history = useHistory()
   const route = useLocation()
-  const classes = useStylesInput()
   const queryWidthForMenu = useMediaQuery('(max-width:1024px)')
   const queryWidthForSearch = useMediaQuery('(max-width:600px)')
   const [openMenu, setOpenMenu] = useState<boolean>(false)
@@ -54,11 +53,7 @@ const TopBar: React.FC = () => {
             <Button>
               <SearchIcon style={{ color: '#fff', fontSize: 30, marginRight: -10 }} />
             </Button>
-            <TextField
-              InputProps={{ classes, disableUnderline: true } as Partial<OutlinedInputProps>}
-              size='small'
-              placeholder='Pesquisar'
-            />
+            <Input placeholder='Pesquisar' />
           </Row>
         )}
       </Row>
