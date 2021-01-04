@@ -1,18 +1,16 @@
 import React from 'react'
 
-import { Column } from '../Column'
-import { Row } from '../Row'
-import { Text } from '../Text'
+import { Column, Row, Text } from 'components'
 
-import { menuItems } from '../../helpers/topbar'
-import { MenuProps } from '../TopBar/types'
+import { menuItems } from 'helpers/topbar'
+import { MenuProps } from 'components/TopBar/types'
 import { Link } from '@material-ui/core'
 
 const Footer: React.FC = () => (
   <Column width='100%' justifyContent='center' alignItems='center'>
     <Row
       width='100%'
-      height='150px'
+      height='250px'
       bgcolor='#004E96'
       paddingX={['10px', '50px', '250px', '350px', '450px']}
       paddingY='25px'
