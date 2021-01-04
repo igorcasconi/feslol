@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   }, [queryWidth800, queryWidth700, queryWidth500])
 
   return (
-    <Column width='100%' height='100%'>
+    <Column width='100%' mb='32px'>
       <Row width='100%' height={{ xs: '700px', sm: '500px', md: '500px', lg: '500px' }} position='relative' mb='24px'>
         <Image sourceimage={featuredImage} width='100%' height='100%' position='absolute' />
         <Row
@@ -206,7 +206,7 @@ const Home: React.FC = () => {
 
         <Row width='100%' flexWrap='wrap' justifyContent='center'>
           {listTeams.map((items: { id: number; logoImage: string }) => (
-            <Row justifyContent='center' alignItems='center' key={items.id} mr='16px' mb='16px'>
+            <Row justifyContent='center' alignItems='center' key={items.id} mr='32px' mb='16px'>
               <Image sourceimage={items.logoImage} width='120px' height='120px' />
             </Row>
           ))}
