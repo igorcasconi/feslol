@@ -2,14 +2,14 @@ import React, { useMemo } from 'react'
 import Carousel from 'react-elastic-carousel'
 import { Link, useMediaQuery } from '@material-ui/core'
 
-import { Column, Row, Image, Text } from '../../components'
+import { Column, Row, Image, Text } from 'components'
 
-import { listChampionship, listNews, listTeams } from '../../utils/mockedHome'
-import { ListChampionship } from '../../shared/listInterfaces'
+import { listChampionship, listNews, listTeams } from 'utils/mockedHome'
+import { ListChampionship } from 'shared/listInterfaces'
 
-import featuredImage from '../../assets/Featured.jpg'
-import trophy from '../../assets/trophy.svg'
-import logo from '../../assets/logo.png'
+import featuredImage from 'assets/Featured.jpg'
+import trophy from 'assets/trophy.svg'
+import logo from 'assets/logo.png'
 
 const Home: React.FC = () => {
   const queryWidth800 = useMediaQuery('(max-width:800px)')

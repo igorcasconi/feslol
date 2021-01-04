@@ -4,10 +4,10 @@ import { Button, OutlinedInputProps, TextField, useMediaQuery, Modal, Backdrop, 
 import SearchIcon from '@material-ui/icons/Search'
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline'
 
-import { Row, Column } from '../../components'
+import { Row, Column } from 'components'
 import { TextMenu, TitleLogo, useStylesInput } from './style'
 
-import { menuItems } from '../../helpers/topbar'
+import { menuItems } from 'helpers/topbar'
 import { MenuProps } from './types'
 
 const TopBar: React.FC = () => {
