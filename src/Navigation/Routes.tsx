@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 import { Column, Footer, TopBar } from 'components'
 
-import { Home, ListNews } from 'screens'
+import { Home, ListNews, ListTeams } from 'screens'
 import { linksMenu } from 'helpers/topbar'
 
 const Routes: React.FC = () => (
@@ -15,6 +15,9 @@ const Routes: React.FC = () => (
       </Route>
       <Route exact path={linksMenu.urlNews}>
         <ListNews />
+      </Route>
+      <Route exact path={linksMenu.urlTeams}>
+        <ListTeams />
       </Route>
       <Footer />
     </Column>

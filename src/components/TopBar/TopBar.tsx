@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { Button, OutlinedInputProps, TextField, useMediaQuery, Modal, Backdrop, Fade } from '@material-ui/core'
+import { Button, useMediaQuery, Modal, Backdrop, Fade } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline'
 
