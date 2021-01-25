@@ -62,11 +62,19 @@ export const listChampionship = [
 export const listTeams = [
   {
     id: 1,
-    logoImage: logo
+    logoImage: logo,
+    name: 'Team 1 LOCO LOCO',
+    results: '10-5',
+    division: 'T3',
+    lastChampionship: 'Campeonato 1'
   },
   {
     id: 2,
-    logoImage: logo
+    logoImage: logo,
+    name: 'Team 2',
+    results: '10-5',
+    division: 'T3',
+    lastChampionship: 'Campeonato 1'
   },
   {
     id: 3,
