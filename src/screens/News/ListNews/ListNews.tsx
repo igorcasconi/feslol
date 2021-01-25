@@ -24,25 +24,25 @@ const ListNews: React.FC = () => {
       <Column width='100%' height='100%'>
         {listNews.map((item: { id: number; title: string; date: string; text: string }) => (
           <Column key={item.id}>
-            <Column width='100%' justifyContent='flex-start' paddingY='16px' paddingX='2px'>
-              <Row width='100%'>
+            <Row width='100%' justifyContent='flex-start' paddingY='16px' paddingX='2px'>
+              <Column width='100%'>
                 <Text fontSize={20} color='#262626'>
                   {item.title}
                 </Text>
-              </Row>
+              </Column>
 
-              <Row width='100%'>
+              <Column width='100%'>
                 <Text fontSize={12} color='#262626'>
                   {item.date}
                 </Text>
-              </Row>
+              </Column>
 
-              <Row width='100%'>
+              <Column width='100%'>
                 <Text fontSize={16} color='#262626'>
                   {item.text}
                 </Text>
-              </Row>
-            </Column>
+              </Column>
+            </Row>
             <Row width='100%' height='1px' bgcolor='#262626' />
           </Column>
         ))}
