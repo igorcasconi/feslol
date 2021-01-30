@@ -14,3 +14,10 @@ export interface ListTeamsProps {
   division?: string
   lastChampionship?: string
 }
+
+export interface ListPlayerProps {
+  id: number
+  photo: string
+  name: string
+  team: string
+}

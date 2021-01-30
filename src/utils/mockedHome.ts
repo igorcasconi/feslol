@@ -101,3 +101,48 @@ export const listTeams = [
     logoImage: logo
   }
 ]
+
+export const listPlayers = [
+  {
+    id: 1,
+    photo: logo,
+    name: 'Player Name 1',
+    team: 'Team 1'
+  },
+  {
+    id: 2,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  },
+  {
+    id: 2,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  },
+  {
+    id: 3,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  },
+  {
+    id: 4,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  },
+  {
+    id: 5,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  },
+  {
+    id: 6,
+    photo: logo,
+    name: 'Player Name 2',
+    team: 'Team 1'
+  }
+]
