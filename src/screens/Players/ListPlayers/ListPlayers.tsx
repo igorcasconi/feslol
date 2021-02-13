@@ -7,7 +7,7 @@ import { listPlayers } from 'utils/mockedHome'
 import { ListPlayerProps } from 'shared/listInterfaces'
 
 const ListPlayers: React.FC = () => (
-  <Column height='100%' width='100%' paddingX={['10px', '50px', '250px', '350px', '450px']} paddingY='25px'>
+  <Column height='100%' width='100%' paddingX={['10px', '50px', '150px', '250px', '350px']} paddingY='25px'>
     <Row width='100%' justifyContent='space-between'>
       <Text fontSize={30} color='#262626'>
         Players
@@ -20,9 +20,9 @@ const ListPlayers: React.FC = () => (
       </Row>
     </Row>
     <Row width='100%' height='1px' bgcolor='#262626' />
-    <Row width='100%' height='100%' flexWrap='wrap' justifyContent='flex-start' alignItems='center' mt='16px'>
+    <Row width='100%' flexWrap='wrap' justifyContent='flex-start'>
       {listPlayers.map((item: ListPlayerProps) => (
-        <Column key={item.id} justifyContent='center' alignItems='center' mr='20px'>
+        <Column key={item.id} justifyContent='center' height='200px' width='200px' alignItems='center' paddingX='10px'>
           <Image sourceimage={item.photo} width='100px' height='100px' />
           <Row>
             <Text fontSize={16} fontWeight='bold' color='#262626'>
