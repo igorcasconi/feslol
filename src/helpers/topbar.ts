@@ -4,7 +4,8 @@ export const linksMenu = {
   urlTeams: '/teams',
   urlPlayers: '/players',
   urlChampionship: '/championship',
-  urlAbout: '/about'
+  urlAbout: '/about',
+  urlLogin: '/Login'
 }
 
 export const menuItems = [
