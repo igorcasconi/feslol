@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 
 import { Column, Footer, TopBar } from 'components'
 
-import { Home, ListNews, ListTeams, ListPlayers } from 'screens'
+import { Home, ListNews, ListTeams, ListPlayers, Login } from 'screens'
 import { linksMenu } from 'helpers/topbar'
 
 const Routes: React.FC = () => (
@@ -21,6 +21,9 @@ const Routes: React.FC = () => (
       </Route>
       <Route exact path={linksMenu.urlPlayers}>
         <ListPlayers />
+      </Route>
+      <Route exact path={linksMenu.urlLogin}>
+        <Login />
       </Route>
       <Footer />
     </Column>
