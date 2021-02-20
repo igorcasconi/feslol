@@ -5,7 +5,14 @@ export const linksMenu = {
   urlPlayers: '/players',
   urlChampionship: '/championship',
   urlAbout: '/about',
-  urlLogin: '/Login'
+  urlLogin: '/login'
+}
+
+export const controlPanel = '/control-panel'
+
+export const linksControlPanel = {
+  urlDashboard: `${controlPanel}/dashboard`,
+  urlPlayers: `${controlPanel}/players`
 }
 
 export const menuItems = [

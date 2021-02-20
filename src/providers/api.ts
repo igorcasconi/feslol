@@ -15,7 +15,7 @@ provider.interceptors.request.use(config => {
       ...config.headers,
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
+      'x-access-token': `${token}`
     }
   }
 })
@@ -26,7 +26,7 @@ provider.interceptors.response.use(
     if (error?.response?.status !== 401 || ['/login'].includes(window.location.pathname)) {
       return Promise.reject(error)
     }
-    window.location.href = '/login'
+    window.location.href = '/control-panel/login'
   }
 )
 

@@ -11,6 +11,7 @@ interface UserContextProps {
   login: (credentials: LoginProps) => Promise<void>
   logout(): void
   loading: boolean
+  currentToken: string | null | undefined
 }
 
 interface TokenProps {
@@ -31,7 +32,7 @@ const UserProvider: React.FC = props => {
       const token = getToken()
       return token
     } catch (err) {
-      console.log('Error! Token is not Authorization')
+      console.log('Error! Token is not Authorized')
     }
   }, [])
 
@@ -40,6 +41,7 @@ const UserProvider: React.FC = props => {
       const loginResponse = await accessLoginRun(credentials)
       setToken(loginResponse.token)
       setUser(loginResponse.users_email)
+      window.location.href = '/control-panel/dashboard'
     } catch (err) {
       console.log('error', err)
     }
@@ -57,10 +59,6 @@ const UserProvider: React.FC = props => {
       }
       fetchUser()
     }
-
-    if (['/login'].includes(window.location.pathname)) {
-      return
-    }
   }, [currentToken])
 
   const logout = () => {
@@ -68,7 +66,7 @@ const UserProvider: React.FC = props => {
     setUser(null)
   }
 
-  return <UserContext.Provider value={{ user, login, logout, loading }} {...props} />
+  return <UserContext.Provider value={{ user, login, logout, loading, currentToken }} {...props} />
 }
 
 const useUser = () => useContext(UserContext)
