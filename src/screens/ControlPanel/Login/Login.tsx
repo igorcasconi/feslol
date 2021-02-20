@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, TextField, CircularProgress } from '@material-ui/core'
 import { Controller, useForm } from 'react-hook-form'
 import styled from 'styled-components'
@@ -11,7 +11,7 @@ import { useUser } from 'contexts/user'
 import { LoginProps } from 'shared/loginTypes'
 
 const Login: React.FC = () => {
-  const { login, loading } = useUser()
+  const { login, loading, currentToken } = useUser()
 
   const { control, handleSubmit } = useForm<LoginProps>({
     defaultValues: { email: '', password: '' },
@@ -21,9 +21,12 @@ const Login: React.FC = () => {
   })
 
   const onSubmit = async (values: LoginProps) => {
-    // console.log(values)
     await login(values)
   }
+
+  useEffect(() => {
+    if (currentToken) window.location.href = 'dashboard'
+  }, [currentToken])
 
   return (
     <Column height='100%' width='100%' paddingX={['10px', '50px', '250px', '450px', '550px']} justifyContent='center'>
