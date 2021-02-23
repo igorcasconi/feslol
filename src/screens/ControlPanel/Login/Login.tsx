@@ -3,6 +3,7 @@ import { Button, TextField, CircularProgress } from '@material-ui/core'
 import { Controller, useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useLocation, useHistory } from 'react-router-dom'
 
 import { Column, Text } from 'components'
 import { LoginSchema } from 'schemas'
@@ -12,6 +13,8 @@ import { LoginProps } from 'shared/loginTypes'
 
 const Login: React.FC = () => {
   const { login, loading, currentToken } = useUser()
+  const route = useLocation()
+  const history = useHistory()
 
   const { control, handleSubmit } = useForm<LoginProps>({
     defaultValues: { email: '', password: '' },
@@ -25,8 +28,8 @@ const Login: React.FC = () => {
   }
 
   useEffect(() => {
-    if (currentToken) window.location.href = 'dashboard'
-  }, [currentToken])
+    if (currentToken && route.pathname.includes('/login')) return history.push('control-panel/dashboard')
+  }, [])
 
   return (
     <Column height='100%' width='100%' paddingX={['10px', '50px', '250px', '450px', '550px']} justifyContent='center'>

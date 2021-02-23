@@ -12,7 +12,7 @@ export const controlPanel = '/control-panel'
 
 export const linksControlPanel = {
   urlDashboard: `${controlPanel}/dashboard`,
-  urlPlayers: `${controlPanel}/players`
+  urlTeams: `${controlPanel}/teams`
 }
 
 export const menuItems = [

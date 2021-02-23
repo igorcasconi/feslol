@@ -4,10 +4,18 @@ import styled, { css } from 'styled-components'
 interface RowProps {
   overflowX?: string
   textOverflow?: string
+  onClick?: () => void
 }
 
-const Row: React.FC<RowProps & BoxProps> = ({ overflowX, textOverflow, children, ...props }) => (
-  <BoxRow display='flex' flexDirection='row' overflowX={overflowX} textOverflow={textOverflow} {...props}>
+const Row: React.FC<RowProps & BoxProps> = ({ overflowX, textOverflow, children, onClick, ...props }) => (
+  <BoxRow
+    display='flex'
+    flexDirection='row'
+    overflowX={overflowX}
+    textOverflow={textOverflow}
+    onClick={onClick}
+    {...props}
+  >
     {children}
   </BoxRow>
 )
