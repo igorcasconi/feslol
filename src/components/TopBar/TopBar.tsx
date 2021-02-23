@@ -21,6 +21,12 @@ const TopBar: React.FC = () => {
     setOpenMenu(false)
   }
 
+  const handleSelectRoutes = (routeSelected: string) => {
+    if (route.pathname.includes('control-panel')) return history.push(routeSelected)
+
+    return history.push(routeSelected)
+  }
+
   return (
     <Column width='100%' justifyContent='center' alignItems='center'>
       <Row width='100%' height='60px' px='35px' justifyContent='space-between' alignItems='center' bgcolor='#262626'>
@@ -80,7 +86,7 @@ const TopBar: React.FC = () => {
                 alignItems='center'
                 bgcolor={route.pathname === items.url ? '#004E96' : 'rgba(255, 255, 255, 0.1)'}
                 onClick={() => {
-                  history.push(items.url)
+                  handleSelectRoutes(items.url)
                   setOpenMenu(false)
                 }}
               >
