@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
-          onClick={() => history.push(linksControlPanel.urlTeams)}
+          onClick={() => history.push(linksControlPanel.urlNews)}
         >
           <PostAddIcon style={{ height: 70, width: 70, color: 'white' }} />
           <Text fontSize={16} color='white'>
