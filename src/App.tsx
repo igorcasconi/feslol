@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Routes from './Navigation/Routes'
 import { UserProvider } from 'contexts/user'
 
+import '@elastic/eui/dist/eui_theme_light.css'
+
 const App: React.FC = () => (
   <Fragment>
     <UserProvider>
