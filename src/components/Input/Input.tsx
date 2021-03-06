@@ -1,38 +1,47 @@
-import React from 'react'
-import { createStyles, makeStyles, OutlinedInputProps, TextField, Theme, TextFieldProps, fade } from '@material-ui/core'
+import React, { InputHTMLAttributes } from 'react'
+import { EuiFieldText, EuiFormRow } from '@elastic/eui'
+import styled, { css } from 'styled-components'
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string
+  isInvalid?: boolean
+  helperText?: string
+}
 
-const useStylesInput = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      border: '1px solid #e2e2e1',
-      width: 125,
-      padding: 5,
-      overflow: 'hidden',
-      borderRadius: 8,
-      backgroundColor: '#fcfcfb',
-      transition: theme.transitions.create(['border-color', 'box-shadow']),
-      '&:hover': {
-        backgroundColor: '#fff'
-      },
-      '&$focused': {
-        backgroundColor: '#fff',
-        boxShadow: `${fade('#004E96', 0.25)} 0 0 0 2px`,
-        borderColor: '#004E96'
-      }
-    },
-    focused: {}
-  })
-)
-
-const Input: React.FC<TextFieldProps> = ({ ...props }) => {
-  const classes = useStylesInput()
+const Input: React.FC<InputProps> = ({ label, isInvalid, helperText, ...props }) => {
   return (
-    <TextField
-      InputProps={{ classes, disableUnderline: true } as Partial<OutlinedInputProps>}
-      size='small'
-      {...props}
-    />
+    <DivInput label={label} fullWidth helpText={helperText} isInvalid={isInvalid}>
+      <InputComponent fullWidth isInvalid={isInvalid} {...props} />
+    </DivInput>
   )
 }
+
+const InputComponent = styled(EuiFieldText)<InputProps>(
+  ({ isInvalid }) => css`
+    border-radius: 4px;
+    padding: 6px;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    width: 100%;
+    border-width: 1px;
+    transition: all 0.5s;
+
+    ${isInvalid && 'border: 1.5px solid red'};
+  `
+)
+
+const DivInput = styled(EuiFormRow)<InputProps>(
+  ({ isInvalid }) =>
+    css`
+      transition: all 0.5s;
+      width: 100%;
+      ${isInvalid && 'color:red'};
+
+      & .euiFormLabel {
+        font-size: 12px;
+        font-weight: normal;
+      }
+    `
+)
 
 export default Input

@@ -11,7 +11,7 @@ const List: React.FC = () => {
     <Column width='100%' height='100%' paddingX={['10px', '50px', '250px', '350px', '450px']} paddingY='25px'>
       <Row width='100%' justifyContent='space-between'>
         <Text fontSize={20} color='#262626'>
-          Teams
+          Notícias
         </Text>
 
         <Column
@@ -23,10 +23,10 @@ const List: React.FC = () => {
           bgColor='#0e75d6'
           borderRadius='8px'
           cursor='pointer'
-          onClick={() => history.push(linksControlPanel.urlCreateTeams)}
+          onClick={() => history.push(linksControlPanel.urlCreateNews)}
         >
           <Text fontSize={12} color='white'>
-            Novo Time +
+            Nova Notícia +
           </Text>
         </Column>
       </Row>
