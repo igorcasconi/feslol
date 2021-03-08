@@ -1,5 +1,5 @@
-export const getToken = () => localStorage.getItem('@token')
+export const getToken = () => localStorage.getItem('_@token')
 
-export const setToken = (token: string) => localStorage.setItem('@token', token)
+export const setToken = (token: string) => localStorage.setItem('_@token', token)
 
-export const clearToken = () => localStorage.removeItem('@token')
+export const clearToken = () => localStorage.removeItem('_@token')

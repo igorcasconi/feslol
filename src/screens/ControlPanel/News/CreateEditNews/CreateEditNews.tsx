@@ -3,8 +3,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { EuiButton, EuiFlexItem } from '@elastic/eui'
 import { useHistory } from 'react-router-dom'
-import { useRequest } from 'ahooks'
 import { Editor } from '@tinymce/tinymce-react'
+import { useMutation } from 'react-query'
 
 import { Column, Text, Row, Input } from 'components'
 import { createNews } from 'services/cp'
@@ -15,7 +15,7 @@ import { newsSchema } from 'schemas/news'
 const CreateEditNews: React.FC = () => {
   const history = useHistory()
 
-  const { run: addNewsRun, loading: addNewLoading } = useRequest(createNews, { manual: true })
+  const { mutateAsync: submitFormNews, isLoading: isSubmittingForm } = useMutation(createNews)
 
   const { control, errors, handleSubmit } = useForm<NewsForm>({
     defaultValues: { title: '', text: '', date: '' },
@@ -29,7 +29,7 @@ const CreateEditNews: React.FC = () => {
         ...values
       }
 
-      await addNewsRun(payload)
+      await submitFormNews(payload)
       history.go(-1)
     } catch (err) {
       console.log(err)
@@ -130,7 +130,7 @@ const CreateEditNews: React.FC = () => {
             </Row>
 
             <EuiFlexItem grow={false}>
-              <EuiButton fill size='s' type='submit' isLoading={addNewLoading}>
+              <EuiButton fill size='s' type='submit' isLoading={isSubmittingForm}>
                 <Text fontSize={14} color='white'>
                   Enviar
                 </Text>

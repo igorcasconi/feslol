@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import jwtDecode from 'jwt-decode'
-import { useRequest } from 'ahooks'
+import { useMutation } from 'react-query'
 
 import { getAccessControlPanel } from 'services'
 import { clearToken, getToken, setToken } from 'utils/auth'
@@ -25,7 +25,7 @@ const UserContext = createContext<UserContextProps>({} as UserContextProps)
 
 const UserProvider: React.FC = props => {
   const [user, setUser] = useState<string | null>(null)
-  const { run: accessLoginRun, loading } = useRequest(getAccessControlPanel, { manual: true, throwOnError: true })
+  const { mutateAsync: accessLoginRun, isLoading: loading } = useMutation(getAccessControlPanel)
 
   const currentToken = useMemo((): string | null | undefined => {
     try {

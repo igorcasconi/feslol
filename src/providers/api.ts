@@ -3,7 +3,7 @@ import axios from 'axios'
 import { getToken } from 'utils/auth'
 
 const provider = axios.create({
-  baseURL: process.env.REACT_APP_API_URL
+  baseURL: process.env.TYPE_ENV === 'dev' ? process.env.REACT_APP_API_URL_LOCAL : process.env.REACT_APP_API_URL
 })
 
 provider.interceptors.request.use(config => {
