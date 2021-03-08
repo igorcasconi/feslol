@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { EuiButton, EuiFilePicker, EuiFlexItem, EuiFormRow } from '@elastic/eui'
+import { EuiButton, EuiFilePicker, EuiFlexItem } from '@elastic/eui'
 import { useHistory } from 'react-router-dom'
-import { useRequest } from 'ahooks'
+import { useMutation } from 'react-query'
 
-import { Column, Text, Row, Input } from 'components'
+import { Column, Text, Row, Input, FormRow } from 'components'
 import { createTeam, uploadImage } from 'services/cp'
 
 import { CreateEditForm } from './types'
@@ -17,8 +17,8 @@ const CreateEditTeam: React.FC = () => {
   const history = useHistory()
   const [file, setFile] = useState<File | null | undefined>(null)
 
-  const { run: newTeamRun, loading: newTeamLoading } = useRequest(createTeam, { manual: true })
-  const { run: uploadImageRun, loading: uploadImageLoading } = useRequest(uploadImage, { manual: true })
+  const { mutateAsync: submitForm, isLoading: isSubmittingForm } = useMutation(createTeam)
+  const { mutateAsync: mutateUploadImage, isLoading: isUploadingImage } = useMutation(uploadImage)
 
   const { control, errors, handleSubmit } = useForm<CreateEditForm>({
     defaultValues: { name: '', division: '', link: '' },
@@ -42,8 +42,8 @@ const CreateEditTeam: React.FC = () => {
         image: file?.name
       }
 
-      await newTeamRun(payload)
-      await uploadImageRun(formData)
+      await submitForm(payload)
+      await mutateUploadImage(formData)
       history.go(-1)
     } catch (err) {
       console.log(err)
@@ -119,7 +119,7 @@ const CreateEditTeam: React.FC = () => {
           </Row>
 
           <Row width='100%' mb='20px'>
-            <EuiFormRow label='Logo do time' fullWidth>
+            <FormRow label='Logo do time' fullWidth>
               <EuiFilePicker
                 fullWidth
                 initialPromptText='Selecione a logo deste Time'
@@ -128,7 +128,7 @@ const CreateEditTeam: React.FC = () => {
                 }}
                 display='default'
               />
-            </EuiFormRow>
+            </FormRow>
           </Row>
 
           <Row width='100%' justifyContent='center' alignItems='center'>
@@ -141,7 +141,7 @@ const CreateEditTeam: React.FC = () => {
             </Row>
 
             <EuiFlexItem grow={false}>
-              <EuiButton fill size='s' type='submit' isLoading={newTeamLoading || uploadImageLoading}>
+              <EuiButton fill size='s' type='submit' isLoading={isSubmittingForm || isUploadingImage}>
                 <Text fontSize={14} color='white'>
                   Enviar
                 </Text>

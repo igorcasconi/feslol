@@ -5,7 +5,14 @@ import { Column, Footer, TopBar } from 'components'
 import { useUser } from 'contexts/user'
 
 import { Home, ListNews, ListPlayers, ListTeams, Login, Dashboard } from 'screens'
-import { CreateEditNews, CreateEditTeam, ListNewsCP, ListTeamCP } from 'screens/ControlPanel'
+import {
+  CreateEditNews,
+  CreateEditPlayer,
+  CreateEditTeam,
+  ListNewsCP,
+  ListPlayersCP,
+  ListTeamCP
+} from 'screens/ControlPanel'
 import { linksMenu, linksControlPanel, controlPanel } from 'helpers/topbar'
 
 interface RouteAuthhenticatedProps {
@@ -34,6 +41,12 @@ const RouteAuthhenticated: React.FC<RouteAuthhenticatedProps> = ({ path }) => {
           </Route>
           <Route path={linksControlPanel.urlCreateNews}>
             <CreateEditNews />
+          </Route>
+          <Route path={linksControlPanel.urlPlayers}>
+            <ListPlayersCP />
+          </Route>
+          <Route path={linksControlPanel.urlCreatePlayers}>
+            <CreateEditPlayer />
           </Route>
         </Fragment>
       ) : (

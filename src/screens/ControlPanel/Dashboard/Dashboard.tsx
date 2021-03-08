@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
           Dashboard
         </Text>
       </Row>
-      <Row width='100%' justifyContent='center'>
+      <Row width='100%' justifyContent='center' flexWrap='wrap'>
         <Column
           width='120px'
           height='120px'
@@ -31,6 +31,7 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
+          mb='16px'
           onClick={() => history.push(linksControlPanel.urlNews)}
         >
           <PostAddIcon style={{ height: 70, width: 70, color: 'white' }} />
@@ -49,6 +50,7 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
+          mb='16px'
           onClick={() => history.push(linksControlPanel.urlTeams)}
         >
           <SecurityIcon style={{ height: 70, width: 70, color: 'white' }} />
@@ -67,7 +69,8 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
-          onClick={() => history.push(linksControlPanel.urlTeams)}
+          mb='16px'
+          onClick={() => history.push(linksControlPanel.urlPlayers)}
         >
           <PersonAddIcon style={{ height: 70, width: 70, color: 'white' }} />
           <Text fontSize={16} color='white'>
@@ -85,6 +88,7 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
+          mb='16px'
           onClick={() => history.push(linksControlPanel.urlTeams)}
         >
           <SportsEsportsIcon style={{ height: 70, width: 70, color: 'white' }} />
@@ -103,6 +107,7 @@ const Dashboard: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           mr='20px'
+          mb='16px'
           onClick={() => history.push(linksControlPanel.urlTeams)}
         >
           <ThumbUpIcon style={{ height: 70, width: 70, color: 'white' }} />
