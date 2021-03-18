@@ -1,10 +1,14 @@
 import React from 'react'
 import { Box, BoxProps } from '@material-ui/core'
 import styled, { css } from 'styled-components'
+
+import { CursorTypes } from 'shared/typesCss'
 interface RowProps {
   overflowX?: string
   textOverflow?: string
   onClick?: () => void
+  bgColor?: string
+  cursor?: CursorTypes
 }
 
 const Row: React.FC<RowProps & BoxProps> = ({ overflowX, textOverflow, children, onClick, ...props }) => (
@@ -20,10 +24,12 @@ const Row: React.FC<RowProps & BoxProps> = ({ overflowX, textOverflow, children,
   </BoxRow>
 )
 
-const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, textOverflow }) => {
+const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, textOverflow, bgColor, cursor }) => {
   return css`
     ${overflowX && `overflow-x: ${overflowX}`};
     ${textOverflow && `text-overflow: ${textOverflow}`};
+    ${bgColor && `background-color: ${bgColor}`};
+    ${cursor && `cursor: ${cursor}`};
     @media (min-width: 900px) {
       scrollbar-width: thin;
       ::-webkit-scrollbar {

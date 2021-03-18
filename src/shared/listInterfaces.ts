@@ -21,3 +21,10 @@ export interface ListPlayerProps {
   name: string
   team: string
 }
+
+export interface NewsDataProps {
+  data: { idNews: string; title: string; date: string }[]
+  page: number
+  totalPages: number
+  totalRows: number
+}
