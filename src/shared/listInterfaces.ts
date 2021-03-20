@@ -22,9 +22,16 @@ export interface ListPlayerProps {
   team: string
 }
 
-export interface NewsDataProps {
-  data: { idNews: string; title: string; date: string }[]
+interface PaginationProps {
   page: number
   totalPages: number
   totalRows: number
+}
+
+export interface NewsDataProps extends PaginationProps {
+  data: { idNews: string; title: string; date: string }[]
+}
+
+export interface ListTeamsDataProps extends PaginationProps {
+  data: { idTeam: string; name: string; division: string }[]
 }
