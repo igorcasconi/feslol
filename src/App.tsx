@@ -8,7 +8,13 @@ import { UserProvider } from 'contexts/user'
 
 import '@elastic/eui/dist/eui_theme_light.css'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 const App: React.FC = () => (
   <Fragment>

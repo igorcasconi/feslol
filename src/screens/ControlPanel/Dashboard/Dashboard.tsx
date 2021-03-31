@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
           alignItems='center'
           mr='20px'
           mb='16px'
-          onClick={() => history.push(linksControlPanel.urlTeams)}
+          onClick={() => history.push(linksControlPanel.urlChampionship)}
         >
           <SportsEsportsIcon style={{ height: 70, width: 70, color: 'white' }} />
           <Text fontSize={12} color='white'>
