@@ -9,7 +9,8 @@ import { Column, FormRow, Input, Row, Text } from 'components'
 import { PlayerSchema } from 'schemas/player'
 import { createPlayer, listTeamsOptions, uploadImage } from 'services/cp'
 
-import { CreateEditPlayerForm, OptionsSelect, TeamsOptions } from './types'
+import { CreateEditPlayerForm, OptionsSelect } from './types'
+import { TeamsOptions } from 'shared/listInterfaces'
 
 const filePath = 'players'
 

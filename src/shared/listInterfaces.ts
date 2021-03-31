@@ -35,3 +35,8 @@ export interface NewsDataProps extends PaginationProps {
 export interface ListTeamsDataProps extends PaginationProps {
   data: { idTeam: string; name: string; division: string }[]
 }
+
+export interface TeamsOptions {
+  idTeam: string
+  name: string
+}

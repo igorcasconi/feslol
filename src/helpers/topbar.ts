@@ -18,7 +18,9 @@ export const linksControlPanel = {
   urlNews: `${controlPanel}/news`,
   urlCreateNews: `${controlPanel}/create-news`,
   urlPlayers: `${controlPanel}/players`,
-  urlCreatePlayers: `${controlPanel}/create-players`
+  urlCreatePlayers: `${controlPanel}/create-players`,
+  urlCreateChampionship: `${controlPanel}/create-championship`,
+  urlChampionship: `${controlPanel}/championships`
 }
 
 export const menuItems = [

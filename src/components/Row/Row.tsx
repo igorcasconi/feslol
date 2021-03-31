@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Box, BoxProps } from '@material-ui/core'
 import styled, { css } from 'styled-components'
 
 import { CursorTypes } from 'shared/typesCss'
-interface RowProps {
+import { ForwardRef } from 'shared/ref'
+interface RowProps extends BoxProps {
   overflowX?: string
   textOverflow?: string
   onClick?: () => void
@@ -11,17 +12,20 @@ interface RowProps {
   cursor?: CursorTypes
 }
 
-const Row: React.FC<RowProps & BoxProps> = ({ overflowX, textOverflow, children, onClick, ...props }) => (
-  <BoxRow
-    display='flex'
-    flexDirection='row'
-    overflowX={overflowX}
-    textOverflow={textOverflow}
-    onClick={onClick}
-    {...props}
-  >
-    {children}
-  </BoxRow>
+const Row: ForwardRef<HTMLDivElement, RowProps> = forwardRef(
+  ({ overflowX, textOverflow, children, onClick, ...props }, ref) => (
+    <BoxRow
+      display='flex'
+      flexDirection='row'
+      overflowX={overflowX}
+      textOverflow={textOverflow}
+      onClick={onClick}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </BoxRow>
+  )
 )
 
 const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, textOverflow, bgColor, cursor }) => {
@@ -48,5 +52,7 @@ const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, textOverflow, bgCo
     }
   `
 })
+
+Row.displayName = 'Row'
 
 export default Row

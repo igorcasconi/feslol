@@ -6,9 +6,11 @@ import { useUser } from 'contexts/user'
 
 import { Home, ListNews, ListPlayers, ListTeams, Login, Dashboard } from 'screens'
 import {
+  CreateEditChampionship,
   CreateEditNews,
   CreateEditPlayer,
   CreateEditTeam,
+  ListChampionshipCP,
   ListNewsCP,
   ListPlayersCP,
   ListTeamCP
@@ -47,6 +49,12 @@ const RouteAuthhenticated: React.FC<RouteAuthhenticatedProps> = ({ path }) => {
           </Route>
           <Route path={linksControlPanel.urlCreatePlayers}>
             <CreateEditPlayer />
+          </Route>
+          <Route path={linksControlPanel.urlCreateChampionship}>
+            <CreateEditChampionship />
+          </Route>
+          <Route path={linksControlPanel.urlChampionship}>
+            <ListChampionshipCP />
           </Route>
         </Fragment>
       ) : (
