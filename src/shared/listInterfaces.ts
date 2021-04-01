@@ -40,3 +40,7 @@ export interface TeamsOptions {
   idTeam: string
   name: string
 }
+
+export interface ListChampionshipCPProps extends PaginationProps {
+  data: { idChampionship: string; name: string; division: string; date: string }[]
+}

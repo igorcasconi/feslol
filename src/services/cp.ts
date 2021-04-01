@@ -3,7 +3,7 @@ import { ChampionshipProps } from 'screens/ControlPanel/Championship/CreateEditC
 import { NewsForm } from 'screens/ControlPanel/News/CreateEditNews/types'
 import { CreateEditPlayerForm } from 'screens/ControlPanel/Players/CreateEditPlayer/types'
 import { CreateEditForm } from 'screens/ControlPanel/Teams/CreateEditTeam/types'
-import { ListTeamsDataProps, NewsDataProps, TeamsOptions } from 'shared/listInterfaces'
+import { ListChampionshipCPProps, ListTeamsDataProps, NewsDataProps, TeamsOptions } from 'shared/listInterfaces'
 
 export const createTeam = (payload: CreateEditForm) => api.post('/new-team', payload)
 export const uploadImage = (image: FormData) =>
@@ -16,3 +16,6 @@ export const deleteNews = (id: string) => api.delete(`/delete-news-cp?id=${id}`)
 export const listTeams = (filters?: string): Promise<ListTeamsDataProps> => api.get(`/list-teams-cp?${filters || ''}`)
 export const deleteTeam = (id: string) => api.delete(`/delete-team-cp?id=${id}`)
 export const addChampionship = (payload: ChampionshipProps) => api.post('/add-championship', payload)
+export const listChampionship = (filters?: string): Promise<ListChampionshipCPProps> =>
+  api.get(`/list-championship-cp?${filters || ''}`)
+export const deleteChampionship = (id: string) => api.delete(`/delete-championship-cp?id=${id}`)
