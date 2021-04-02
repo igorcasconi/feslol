@@ -87,18 +87,6 @@ export const listTeams = [
   {
     id: 5,
     logoImage: logo
-  },
-  {
-    id: 6,
-    logoImage: logo
-  },
-  {
-    id: 7,
-    logoImage: logo
-  },
-  {
-    id: 8,
-    logoImage: logo
   }
 ]
 

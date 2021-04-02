@@ -6,6 +6,7 @@ import { CursorTypes } from 'shared/typesCss'
 import { ForwardRef } from 'shared/ref'
 interface RowProps extends BoxProps {
   overflowX?: string
+  overflowY?: string
   textOverflow?: string
   onClick?: () => void
   bgColor?: string
@@ -28,9 +29,10 @@ const Row: ForwardRef<HTMLDivElement, RowProps> = forwardRef(
   )
 )
 
-const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, textOverflow, bgColor, cursor }) => {
+const BoxRow = styled(Box)<RowProps & BoxProps>(({ overflowX, overflowY, textOverflow, bgColor, cursor }) => {
   return css`
     ${overflowX && `overflow-x: ${overflowX}`};
+    ${overflowY && `overflow-y: ${overflowY}`};
     ${textOverflow && `text-overflow: ${textOverflow}`};
     ${bgColor && `background-color: ${bgColor}`};
     ${cursor && `cursor: ${cursor}`};
