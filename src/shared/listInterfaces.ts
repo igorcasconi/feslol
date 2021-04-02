@@ -32,6 +32,10 @@ export interface NewsDataProps extends PaginationProps {
   data: { idNews: string; title: string; date: string }[]
 }
 
+export interface NewsSiteDataProps extends PaginationProps {
+  data: { idNews: string; title: string; date: string; text: string }[]
+}
+
 export interface ListTeamsDataProps extends PaginationProps {
   data: { idTeam: string; name: string; division: string }[]
 }
