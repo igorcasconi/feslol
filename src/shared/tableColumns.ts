@@ -46,3 +46,22 @@ export const ColumnsChampionship = [
     name: 'actions'
   }
 ]
+
+export const ColumnsPlayers = [
+  {
+    fieldName: 'nickname',
+    name: 'Nickname'
+  },
+  {
+    fieldName: 'playerName',
+    name: 'Nome'
+  },
+  {
+    fieldName: 'teamName',
+    name: 'Time'
+  },
+  {
+    fieldName: 'actions',
+    name: 'actions'
+  }
+]
