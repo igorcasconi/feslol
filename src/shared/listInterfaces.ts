@@ -44,3 +44,7 @@ export interface TeamsOptions {
 export interface ListChampionshipCPProps extends PaginationProps {
   data: { idChampionship: string; name: string; division: string; date: string }[]
 }
+
+export interface ListPlayersCPProps extends PaginationProps {
+  data: { idPlayer: string; nickname: string; playerName: string; teamName: string }[]
+}
