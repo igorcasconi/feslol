@@ -9,8 +9,9 @@ export interface ListChampionship {
 export interface ListTeamsProps {
   id: number
   logoImage: string
-  name?: string
-  results?: string
+  teamName?: string
+  defeats?: number
+  victorys?: number
   division?: string
   lastChampionship?: string
 }
