@@ -22,4 +22,5 @@ export interface PaginationProps {
   totalPages: number
   currentPage: number
   setCurrentPage: Dispatch<SetStateAction<number>>
+  handleSelectPage?: () => void
 }
