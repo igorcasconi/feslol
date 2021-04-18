@@ -7,7 +7,7 @@ export interface ListChampionship {
 }
 
 export interface ListTeamsProps {
-  id: number
+  idTeam: number
   logoImage: string
   teamName?: string
   defeats?: number
@@ -17,10 +17,10 @@ export interface ListTeamsProps {
 }
 
 export interface ListPlayerProps {
-  id: number
-  photo: string
-  name: string
-  team: string
+  idPlayer: string
+  image: string
+  nickname: string
+  teamName: string
 }
 
 interface PaginationProps {
@@ -39,6 +39,10 @@ export interface NewsSiteDataProps extends PaginationProps {
 
 export interface ListTeamsDataProps extends PaginationProps {
   data: { idTeam: string; name: string; division: string }[]
+}
+
+export interface ListPlayerSiteDataProps extends PaginationProps {
+  data: ListPlayerProps[]
 }
 
 export interface TeamsOptions {

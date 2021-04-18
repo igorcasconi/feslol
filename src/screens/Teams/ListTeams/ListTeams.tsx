@@ -52,7 +52,7 @@ const ListTeams: React.FC = () => {
   }, [setQueryString, location.search])
 
   const handleFilterTeams = () => {
-    if (!queryString) return
+    if (!filter) return
 
     return history.push(`/teams?${formatQueryString(filter)}`)
   }
@@ -87,7 +87,7 @@ const ListTeams: React.FC = () => {
         ) : teamsData?.data && teamsData.data.length ? (
           <Fragment>
             {teamsData?.data?.map((item: ListTeamsProps) => (
-              <Column key={item.id}>
+              <Column key={item.idTeam}>
                 <Row width='100%' justifyContent='space-between' paddingY='16px' paddingX='2px'>
                   <Row justifyContent='flex-start' mr='20px'>
                     <Column mr='16px'>
