@@ -3,7 +3,7 @@ export const linksMenu = {
   urlNews: '/news',
   urlTeams: '/teams',
   urlPlayers: '/players',
-  urlChampionship: '/championship',
+  urlChampionship: '/championships',
   urlAbout: '/about',
   urlLogin: '/login'
 }

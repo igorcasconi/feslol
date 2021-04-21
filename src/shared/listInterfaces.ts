@@ -1,9 +1,8 @@
 export interface ListChampionship {
-  id: number
-  name: string
+  idChampionship: string
+  championshipName: string
   date: string
-  hour: string
-  link: string
+  division: string
 }
 
 export interface ListTeamsProps {
@@ -56,4 +55,8 @@ export interface ListChampionshipCPProps extends PaginationProps {
 
 export interface ListPlayersCPProps extends PaginationProps {
   data: { idPlayer: string; nickname: string; playerName: string; teamName: string }[]
+}
+
+export interface ListChampionshipSitesProps extends PaginationProps {
+  data: ListChampionship[]
 }

@@ -4,7 +4,7 @@ import { Redirect, Route, useLocation } from 'react-router-dom'
 import { Column, Footer, TopBar } from 'components'
 import { useUser } from 'contexts/user'
 
-import { Home, ListNews, ListPlayers, ListTeams, Login, Dashboard } from 'screens'
+import { Home, ListNews, ListPlayers, ListTeams, Login, Dashboard, ListChampionships } from 'screens'
 import {
   CreateEditChampionship,
   CreateEditNews,
@@ -83,6 +83,9 @@ const Routes = () => {
         </Route>
         <Route exact path={linksMenu.urlPlayers}>
           <ListPlayers />
+        </Route>
+        <Route exact path={linksMenu.urlChampionship}>
+          <ListChampionships />
         </Route>
         <Route exact path={linksMenu.urlLogin}>
           <Login />
